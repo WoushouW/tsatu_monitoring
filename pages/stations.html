@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інформація про станції - Моніторинг СЕС</title>
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Заголовок -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-solar-panel"></i>
+                    <h1>Система моніторингу СЕС</h1>
+                </div>
+                <nav class="nav">
+                    <a href="/" class="nav-link">
+                        <i class="fas fa-home"></i> Головна
+                    </a>
+                    <a href="/stations" class="nav-link active">
+                        <i class="fas fa-th-large"></i> Станції
+                    </a>
+                    <a href="/charts" class="nav-link">
+                        <i class="fas fa-chart-line"></i> Графіки
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основний контент -->
+    <main class="main-content">
+        <div class="container">
+            <h2 class="page-title">
+                <i class="fas fa-solar-panel"></i>
+                Інформація про станції
+            </h2>
+
+            <!-- Фільтри та пошук -->
+            <div class="controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Пошук станцій...">
+                </div>
+                
+                <div class="filters">
+                    <select id="filter-mounting" class="filter-select">
+                        <option value="all">Всі типи монтажу</option>
+                        <option value="rooftop">Дахові</option>
+                        <option value="ground-mounted">Наземні</option>
+                    </select>
+                    
+                    <select id="filter-monitoring" class="filter-select">
+                        <option value="all">Всі системи моніторингу</option>
+                        <option value="Huawei FusionSolar">Huawei FusionSolar</option>
+                        <option value="SMA Sunny Portal">SMA Sunny Portal</option>
+                        <option value="Fronius Solar.web">Fronius Solar.web</option>
+                        <option value="SolarEdge Monitoring">SolarEdge Monitoring</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Список станцій -->
+            <div class="stations-grid" id="stations-container">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Завантаження станцій...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Система моніторингу СЕС.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/scripts/stations.js"></script>
+</body>
+</html>

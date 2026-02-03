@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Графіки - Моніторинг СЕС</title>
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Заголовок -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-solar-panel"></i>
+                    <h1>Система моніторингу СЕС</h1>
+                </div>
+                <nav class="nav">
+                    <a href="/" class="nav-link">
+                        <i class="fas fa-home"></i> Головна
+                    </a>
+                    <a href="/stations" class="nav-link">
+                        <i class="fas fa-th-large"></i> Станції
+                    </a>
+                    <a href="/charts" class="nav-link active">
+                        <i class="fas fa-chart-line"></i> Графіки
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основний контент -->
+    <main class="main-content detail-page">
+        <div class="container-wide">
+            <div class="detail-layout">
+                <!-- Бічна панель зі списком станцій -->
+                <aside class="sidebar">
+                    <h2>
+                        <i class="fas fa-list"></i>
+                        Вибір станцій
+                    </h2>
+                    <div class="select-all-section">
+                        <button id="select-all-btn" class="btn-select-all">
+                            <i class="fas fa-check-double"></i>
+                            Вибрати всі
+                        </button>
+                        <button id="clear-all-btn" class="btn-clear-all">
+                            <i class="fas fa-times"></i>
+                            Очистити
+                        </button>
+                    </div>
+                    <div class="stations-list" id="stations-list">
+                        <div class="loading-small">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Основна область з графіками -->
+                <div class="content-area">
+                    <!-- Вибір періоду -->
+                    <div class="period-selector">
+                        <div class="period-quick">
+                            <button class="period-btn" data-period="7">7 днів</button>
+                            <button class="period-btn active" data-period="30">30 днів</button>
+                            <button class="period-btn" data-period="90">90 днів</button>
+                        </div>
+                        <div class="period-custom">
+                            <label>
+                                <span>Від:</span>
+                                <input type="date" id="start-date" class="date-input">
+                            </label>
+                            <label>
+                                <span>До:</span>
+                                <input type="date" id="end-date" class="date-input">
+                            </label>
+                            <button id="apply-custom-period" class="btn-apply">
+                                <i class="fas fa-check"></i> Застосувати
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Графік виробітку -->
+                    <div class="chart-card">
+                        <h3>
+                            <i class="fas fa-chart-line"></i>
+                            Графік виробітку електроенергії
+                        </h3>
+                        <div class="chart-info" id="chart-info">
+                            <p><i class="fas fa-info-circle"></i> Виберіть станції для відображення даних</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="production-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Блок звітності -->
+                    <div class="report-section" id="export">
+                        <h3>
+                            <i class="fas fa-file-export"></i>
+                            Формування звітності
+                        </h3>
+                        <div class="report-info">
+                            <p>Виберіть станції та період для експорту даних</p>
+                        </div>
+                        <div class="report-controls">
+                            <button id="export-excel" class="btn-primary" disabled>
+                                <i class="fas fa-file-excel"></i>
+                                Експорт даних (Excel)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Система моніторингу СЕС.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/scripts/charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система моніторингу СЕС</title>
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Заголовок -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-solar-panel"></i>
+                    <h1>Система моніторингу СЕС</h1>
+                </div>
+                <nav class="nav">
+                    <a href="/" class="nav-link active">
+                        <i class="fas fa-home"></i> Головна
+                    </a>
+                    <a href="/stations" class="nav-link">
+                        <i class="fas fa-th-large"></i> Станції
+                    </a>
+                    <a href="/charts" class="nav-link">
+                        <i class="fas fa-chart-line"></i> Графіки
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Головний банер -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Моніторинг сонячних електростанцій України</h2>
+                <p>Відстежуйте виробництво електроенергії з 16 сонячних станцій у режимі реального часу</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <i class="fas fa-bolt"></i>
+                        <span id="hero-capacity">4230</span>
+                        <small>кВт загальної потужності</small>
+                    </div>
+                    <div class="hero-stat">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="hero-locations">8</span>
+                        <small>міст України</small>
+                    </div>
+                    <div class="hero-stat">
+                        <i class="fas fa-solar-panel"></i>
+                        <span id="hero-stations">16</span>
+                        <small>активних станцій</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основний контент -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Загальна статистика -->
+            <section class="dashboard">
+                <h3>
+                    <i class="fas fa-chart-bar"></i>
+                    Статистика системи
+                </h3>
+                
+                <div class="statistics">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4 id="total-stations">-</h4>
+                            <p>Всього станцій</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4 id="total-capacity">-</h4>
+                            <p>Загальна потужність</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4 id="total-locations">-</h4>
+                            <p>Локацій</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4 id="total-systems">-</h4>
+                            <p>Систем моніторингу</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Швидкі дії -->
+            <section class="quick-actions">
+                <h3>
+                    <i class="fas fa-rocket"></i>
+                    Швидкі дії
+                </h3>
+                
+                <div class="action-cards">
+                    <a href="/stations" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-list"></i>
+                        </div>
+                        <h4>Переглянути станції</h4>
+                        <p>Детальна інформація про кожну СЕС</p>
+                    </a>
+                    
+                    <a href="/charts" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Переглянути графіки</h4>
+                        <p>Аналіз виробітку електроенергії</p>
+                    </a>
+                    
+                    <a href="/charts#export" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-file-export"></i>
+                        </div>
+                        <h4>Експорт даних</h4>
+                        <p>Завантажити звіти у форматі Excel</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Інфографіка -->
+            <section class="infographic">
+                <h3>
+                    <i class="fas fa-info-circle"></i>
+                    Про систему
+                </h3>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-number">16</div>
+                        <div class="info-label">Сонячних електростанцій</div>
+                        <p>Розподілені по 8 містах України</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-number">4.2</div>
+                        <div class="info-label">МВт потужності</div>
+                        <p>Загальна встановлена потужність</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-number">7/9</div>
+                        <div class="info-label">Дахові / Наземні</div>
+                        <p>Розподіл за типом монтажу</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-number">4</div>
+                        <div class="info-label">Системи моніторингу</div>
+                        <p>Huawei, SMA, Fronius, SolarEdge</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Локації -->
+            <section class="locations">
+                <h3>
+                    <i class="fas fa-map-marked-alt"></i>
+                    Географічне розташування
+                </h3>
+                
+                <div class="location-list">
+                    <div class="location-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="location-info">
+                            <h4>Київська область</h4>
+                            <p>Бориспіль - 2 станції</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="location-info">
+                            <h4>Вінницька область</h4>
+                            <p>Вінниця - 2 станції</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="location-info">
+                            <h4>Дніпропетровська область</h4>
+                            <p>Дніпро, Новомосковськ - 2 станції</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="location-info">
+                            <h4>Запорізька область</h4>
+                            <p>Запоріжжя - 2 станції</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="location-info">
+                            <h4>Львівська область</h4>
+                            <p>Львів, Пустомити - 2 станції</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="location-info">
+                            <h4>Одеська область</h4>
+                            <p>Одеса, Чорноморськ - 2 станції</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="location-info">
+                            <h4>Сумська область</h4>
+                            <p>Суми, Конотоп - 2 станції</p>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="location-info">
+                            <h4>Харківська область</h4>
+                            <p>Харків, Дергачі - 2 станції</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Система моніторингу СЕС.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/scripts/main.js"></script>
+</body>
+</html>
