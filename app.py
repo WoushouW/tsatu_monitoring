@@ -6,6 +6,9 @@ from data_parser import get_all_stations, get_station_by_id, get_statistics, get
 from datetime import datetime, timedelta
 import io
 import csv
+import threading
+import time
+import requests
 
 app = Flask(__name__, 
             template_folder='pages',
@@ -184,5 +187,24 @@ def export_excel():
         download_name=f'ses_report_{datetime.now().strftime("%Y%m%d")}.csv'
     )
 
+def self_ping(url):
+    print(f"Запущено селф-пінг для: {url}")
+    while True:
+        try:
+            # Виконуємо запит
+            response = requests.get(url)
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] Пінг успішний: {response.status_code}")
+        except Exception as e:
+            print(f"Помилка пінгу: {e}")
+        
+        # Чекаємо 5 хвилин (300 секунд)
+        time.sleep(300)
+
 if __name__ == '__main__':
+    TARGET_URL = "https://tsatu-monitoring.onrender.com"
+    
+    ping_thread = threading.Thread(target=self_ping, args=(TARGET_URL,), daemon=True)
+    ping_thread.start()
+    
     app.run(debug=True, host='0.0.0.0', port=5000)
+
