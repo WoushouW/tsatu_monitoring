@@ -202,7 +202,7 @@ def self_ping(url):
         time.sleep(300)
 
 if __name__ == '__main__':
-    TARGET_URL = "https://tsatu-monitoring.onrender.com"
+    TARGET_URL = "https://tsatu-monitoring-88qr.onrender.com"
     
     ping_thread = threading.Thread(target=self_ping, args=(TARGET_URL,), daemon=True)
     ping_thread.start()
